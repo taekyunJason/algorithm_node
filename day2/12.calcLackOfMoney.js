@@ -11,3 +11,9 @@ function calc(price, money, count) {
 }
 
 calc(3, 20, 4);
+
+//풀이2 - 1~count 까지의 합 X price - money
+function solution(price, money, count) {
+  const tmp = (price * count * (count + 1)) / 2 - money;
+  return tmp > 0 ? tmp : 0;
+}
