@@ -1,3 +1,5 @@
+//https://programmers.co.kr/learn/courses/30/lessons/12916
+
 function countAlpha(arr) {
   let num_p = 0;
   let num_y = 0;
@@ -15,3 +17,10 @@ function countAlpha(arr) {
 }
 
 countAlpha("Pyy");
+
+//풀이2
+function numPY(s) {
+  return (
+    s.toUpperCase().split("P").length === s.toUpperCase().split("Y").length
+  );
+}

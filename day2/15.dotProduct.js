@@ -1,3 +1,5 @@
+//https://programmers.co.kr/learn/courses/30/lessons/70128
+
 function dotProduct(arr1, arr2) {
   let dotProd = 0;
   for (let i = 0; i < arr1.length; i++) {
