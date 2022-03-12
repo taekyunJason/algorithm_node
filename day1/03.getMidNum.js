@@ -12,3 +12,20 @@ function getMidStr(str) {
 }
 
 getMidStr("12345");
+
+//.concat() => 문자열/배열 합치기
+//Math.floor 반내림
+//parseInt 정수 변환
+
+//풀이2
+function solution(s) {
+  return s.substr(Math.ceil(s.length / 2) - 1, s.length % 2 === 0 ? 2 : 1);
+}
+
+//풀이3
+function solution(s) {
+  const mid = Math.floor(s.length / 2);
+  return s.length % 2 === 1 ? s[mid] : s[mid - 1] + s[mid];
+}
+
+//참고 사이트 : https://hianna.tistory.com/446

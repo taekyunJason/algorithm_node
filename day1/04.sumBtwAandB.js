@@ -5,3 +5,20 @@ function sumAWithB(num1, num2) {
 }
 
 sumAWithB(1, 5);
+
+//풀이1
+function solution(a, b) {
+  let sum = 0;
+  if (a > b) {
+    for (let i = b; i <= a; i++) {
+      sum += i;
+    }
+  } else {
+    for (let i = a; i <= b; i++) {
+      sum += i;
+    }
+  }
+  return sum;
+}
+
+//참고 사이트 : https://mathbang.net/609
