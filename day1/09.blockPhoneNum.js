@@ -9,3 +9,5 @@ function blockPhoneNum(str) {
 }
 
 blockPhoneNum("0123456789");
+
+//slice() : https://im-developer.tistory.com/103
