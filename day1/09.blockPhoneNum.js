@@ -12,13 +12,13 @@ blockPhoneNum("0123456789");
 
 //slice() : https://im-developer.tistory.com/103
 
-// //풀이2
-// function solution(num) {
-//   let answer = "";
-//   for (let i = 0; i < num.length; i++) {
-//     i < num.length - 4 ? (answer += "*") : (answer += num[i]);
-//   }
-//   console.log(answer);
-// }
+//풀이2
+function solution(num) {
+  let answer = "";
+  for (let i = 0; i < num.length; i++) {
+    i < num.length - 4 ? (answer += "*") : (answer += num[i]);
+  }
+  console.log(answer);
+}
 
-// solution("0123456789");
+solution("0123456789");
