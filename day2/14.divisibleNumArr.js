@@ -9,7 +9,7 @@ function divisible(arr, div) {
   console.log(answer);
 }
 
-divisible([1, 10, 5], 5);
+divisible([1, 10, 5], 100);
 
 //오름차순 정렬
 //arr.sort((a,b)=>a-b)   b가 더 클때 음수가 나옴,
