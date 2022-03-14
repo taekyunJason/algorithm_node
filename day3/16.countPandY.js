@@ -6,7 +6,13 @@ function count(str) {
     else if (str[i] == "Y" || str[i] == "y") numY++;
   }
   numY == numP ? console.log(true) : console.log(false);
-  if ((numP == 0) | (numY == 0)) console.log(true);
 }
 
 count("PyY");
+
+//풀이2
+function numPY(s) {
+  return (
+    s.toUpperCase().split("P").length === s.toUpperCase().split("Y").length
+  );
+}

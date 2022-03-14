@@ -7,3 +7,9 @@ function dotProduct(arr1, arr2) {
 }
 
 dotProduct([-1, 0, 1], [1, 0, -1]);
+
+//풀이2
+
+function solution(a, b) {
+  return a.reduce((acc, _, i) => (acc += a[i] * b[i]), 0);
+}
