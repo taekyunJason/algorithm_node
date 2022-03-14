@@ -1,13 +1,15 @@
 function addNum(num) {
   let answer = 0;
-  while (num >= 10) {
+
+  while (num > 0) {
     answer += num % 10;
-    num /= 10;
+    num = Math.floor(num / 10);
   }
+
   console.log(answer);
 }
 
-solution1(123);
+addNum(12345);
 
 //풀이2
 function solution(num) {
