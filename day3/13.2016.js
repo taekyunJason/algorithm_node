@@ -6,10 +6,9 @@ function getDayNm(m, d) {
   for (let i = 1; i < mon[m]; i++) {
     //31번 반복 -> dayNum 값이 undefined, 배열의 값으로 입력이 아닌 index로 사용!
     dayNum += mon[i - 1];
-    console.log(dayNum);
   }
 
-  console.log(day[((dayNum + d) % 7) - 1]);
+  return day[((dayNum + d) % 7) - 1];
 }
 
-getDayNm(5, 24);
+console.log(getDayNm(5, 24));
