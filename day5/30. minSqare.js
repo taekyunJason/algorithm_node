@@ -1,53 +1,24 @@
 //https://programmers.co.kr/learn/courses/30/lessons/86491
-//[[60,50],[30,70],[60,30],[80,40]] 각 원소의 첫번째 요소의 max1, 각 요소의 두번째 요소의 max2//
-//if(max1>=max2 && max2의 첫번째 값<= 각 요소의 두번째 요소의 두번째로 큰값) => size = max1*각 요소의 두번째 요소의 두번째로 큰값
+//[[60,50],[30,70],[60,30],[80,40]]
 
-function minSqare(sizeArr) {
-  let maxHor = 0;
-  let maxVer = 0;
-  let maxVerSec = 0;
-  let size = 0;
-
-  console.log(sizeArr);
-  for (let i = 0; i < sizeArr.length; i++) {}
-  sizeArr.sort((a, b) => b - a);
+function findMinSqare(sizes) {
+  let [hor, ver] = sizes.reduce(
+    //처음부터 [가로, 세로]배열에서 초기바열을 합해준다
+    ([h, v], [a, b]) => [
+      //인덱스 0번 1번에
+      Math.max(h, Math.max(a, b)), //인덱스[0][0]번과 인덱스 1번의 최대값(가로)을 비교
+      Math.max(v, Math.min(a, b)), //인덱스[0][1]번과 인덱스 1번의 최소값(자동으로 세로)을 비교
+    ], //위의 과정을 거쳐서 [제일 큰 값, 1차 배열 원소 둘 중 작은 원소들 중에서 제일 큰 값]
+    [0, 0] //초깃값 설정
+  );
+  return hor * ver;
 }
 
 console.log(
-  minSqare([
+  findMinSqare([
     [60, 50],
     [30, 70],
     [60, 30],
     [80, 40],
   ])
 );
-
-// //풀이2
-// function solution(sizes) {
-//   sizes.map((item) => item.sort((a, b) => b - a));
-//   console.log(sizes);
-//   let hMax = Math.max.apply(
-//     null,
-//     sizes.map((item) => item[0])
-//   );
-//   let vMax = Math.max.apply(
-//     null,
-//     sizes.map((item) => item[1])
-//   );
-//   return hMax * vMax;
-// }
-
-// //풀이3
-// function solution(sizes) {
-//     const newSizes = sizes.map(e => e.sort((a, b) => a - b));
-//     return Math.max(...newSizes.map(e => e[0])) * Math.max(...newSizes.map(e => e[1]));
-// }
-
-// console.log(
-//   solution([
-//     [60, 50],
-//     [30, 70],
-//     [60, 30],
-//     [80, 40],
-//   ])
-// );
