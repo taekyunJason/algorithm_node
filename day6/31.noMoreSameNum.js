@@ -18,7 +18,7 @@ function noMoreSameNum(arr) {
 console.log(noMoreSameNum([4, 4, 4, 3, 3]));
 
 //filter -> 배열 안에서 특정 조건 설정해서, true가 리턴되는 요소만 새로 배열 구성
-//filter인덱스로 구분하는 법
+//filter인덱스로 구분하는 법?
 //
 
 // function solution(arr) {         //해결하기
