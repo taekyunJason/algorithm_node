@@ -52,23 +52,29 @@
 function solution(arr) {
   let answer = [];
 
+  //각각의 패턴을 배열화
   let no1 = [1, 2, 3, 4, 5];
   let no2 = [2, 1, 2, 3, 2, 4, 2, 5];
   let no3 = [3, 3, 1, 1, 2, 2, 4, 4, 5, 5];
 
+  //맞춘 정답 갯수가 담길 score를 초기화
   let score = [0, 0, 0];
 
+  //정답 배열 길이만큼 반복하면서 각각 배열에서 정답이 있으면 score의 인덱스++
   for (let i = 0; i < arr.length; i++) {
     if (arr[i] === no1[i % no1.length]) score[0]++;
     if (arr[i] === no2[i % no2.length]) score[1]++;
     if (arr[i] === no3[i % no3.length]) score[2]++;
   }
 
+  //score배열에서 최댓값을 구해놓고,
   let max = Math.max(...score);
+  //score 배열 길이만큼 반복하면서 최댓값과 인덱스의 값을 비교해서 같으면 인덱스값을 배열에 추가
   for (let i = 0; i < score.length; i++) {
     if (max === score[i]) answer.push(i + 1);
   }
 
+  //인덱스가 추가된 배열을 리턴
   return answer;
 }
 
