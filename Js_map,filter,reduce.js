@@ -7,7 +7,6 @@
 
 // let numbers = [1, 2, 3, 4, 5];
 // let result = numbers.map((numbers) => numbers * numbers);
-
 // console.log(numbers);
 // console.log(result);
 
