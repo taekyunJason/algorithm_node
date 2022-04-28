@@ -7,23 +7,23 @@
 //하루에 올라갈수 있는 높이 a-b
 //v높이를 올라가는데 걸리는 일수 = Math.ceil(v/(a-b))
 
-const fs = require("fs");
-const stdin = (
-  process.platform === "linux"
-    ? fs.readFileSync("/dev/stdin").toString()
-    : `2 1 5`
-).split("\n");
+// const fs = require("fs");
+// const stdin = (
+//   process.platform === "linux"
+//     ? fs.readFileSync("/dev/stdin").toString()
+//     : `2 1 5`
+// ).split("\n");
 
-const input = (() => {
-  let line = 0;
-  return () => stdin[line++];
-})();
+// const input = (() => {
+//   let line = 0;
+//   return () => stdin[line++];
+// })();
 
-let t = input();
-while (t--) {
-  const [a, b, v] = input().split(" ").map(Number);
-  console.log(Math.ceil(v / (a - b)));
-}
+// let t = input();
+// while (t--) {
+//   const [a, b, v] = input().split(" ").map(Number);
+//   console.log(Math.ceil(v / (a - b))); 마지막날에는 미끄러지면 안되는데 미끄러지게 연산처리가 되어서 실패!
+// }
 
 let input = require("fs").readFileSync("/dev/stdin").toString().split(" ");
 
