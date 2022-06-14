@@ -10,17 +10,31 @@
 // 이용자의 ID가 담긴 문자열 배열 id_list, 각 이용자가 신고한 이용자의 ID 정보가 담긴 문자열 배열 report, 정지 기준이 되는 신고 횟수 k가 매개변수로 주어질 때,
 //각 유저별로 처리 결과 메일을 받은 횟수를 배열에 담아 return 하도록 solution 함수를 완성해주세요.
 
+//answer는 각 element가 number인 배열로 나와야함
+
 function solution(id_list, report, k) {
-  const answer = new Array(id_list.length);
-  answer.fill(0);
-  const report_list = {};
+  const check = Array.from(new Array(id_list.length), () => new Array());
+  const realReport = [...new Set(report)];
 
-  id_list.map((user) => {
-    report_list[user] = [];
-  });
+  for (const item of realReport) {
+    const value = item.split(" ");
+    const index = id_list.indexOf(value[1]);
 
-  for (const key in report_list) {
-    if (report_list[key].length >= key) {
+    check[index].push(value[0]);
+  }
+
+  let answer = new Array(id_list.length).fill(0);
+
+  for (const item of check) {
+    if (item.length >= k) {
+      for (const innerItem of item) {
+        answer[id_list.indexOf(innerItem)] += 1;
+      }
     }
   }
+  return answer;
 }
+
+console.log(
+  solution(["con", "ryan"], ["ryan con", "ryan con", "ryan con", "ryan con"], 3)
+);
