@@ -26,6 +26,23 @@
 //   return answer;
 // }
 
+function solution(sizes) {
+  let w = 0;
+  let h = 0;
+
+  for (let i = 0; i < sizes.length; i++) {
+    if (sizes[i][0] < sizes[i][1]) {
+      console.log("1=>>" + sizes[i][0] + " " + sizes[i][1]);
+      [sizes[i][0], sizes[i][1]] = [sizes[i][1], sizes[i][0]];
+      console.log("2=>>" + sizes[i][0] + " " + sizes[i][1]);
+    }
+    if (w < sizes[i][0]) w = sizes[i][0];
+    if (h < sizes[i][1]) h = sizes[i][1];
+  }
+  return w * h;
+}
+
+//가로, 세로 배열 만들어놓고, 처음 입력받는 배열 값을 [큰,작]으로 정렬하여 arr[큰]의 최대값, arr[작]의 최대값
 function solution2(arr) {
   let hor = [];
   let ver = [];
@@ -44,7 +61,7 @@ function solution2(arr) {
 }
 
 console.log(
-  solution2([
+  solution([
     [60, 50],
     [30, 70],
     [60, 30],
