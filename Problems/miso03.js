@@ -1,30 +1,14 @@
-// 예약석이 a/k이면 2리턴
-// 예약석이 가운데(defg)에 앉히거나/
+// 4인가족이 앉을수 있는 경우의 수 파악하기
 
-//1. 예약이 a/k열 만 포함된 경우 - 2리턴
-//2. 가운데(defg) 열이 포함되면 [0,1]에 포함되면 뒤에 4자리 검사후 빈경우 리턴1
-//2. 가운데(defg) 열이 포함되면 [0,1]에 포함되면 앞에 4자리 검사후 빈경우 리턴1
+// N개의 행, 10개의 열 ( 3, 4, 3 )
+// S 문자열로 현재 예약된 좌석의 정보를 제공함 ('1A 2F 1C')
 
-//2-1. 가운데(defg)가 비어있으면 1리턴
+// 한번에 4가족이 인접해서 앉을수 있는 경우의 수
+// 인접하여 앉을 수 있는 경우 : (defg) / (bcde) / (fghj)
 
-//처음에 공백이 연속으로 4개 있는지 파악
-
-// 문자열 분리
-// if(열에 a/k만 있는 경우 - 2)
-// else{
-// if(b/c/d/e)가 없는 경우 - 1
-// if(d/e/f/g)가 없는 경우 - 0
-// if(f/g/h/j)가 없는 경우 - 1
-
-// }
-
-// if(d/e/f/g)가 빈 경우 - 1
-// if(b/c/d/e)가 빈 경우 - if(f/g/h/j)가 빈 경우 2
-// if(b/c/d/e)가 빈 경우 - if(f/g/h/j)가 예약된 경우 1
-
-// if(f/g/h/j)가 빈 경우 - if(b/c/d/e)가 빈 경우
-
-//b-j까지 빈 경우 - 2리턴
+// 1. 제공된 문자열을 잘라서 행과 열을 구분
+// 2. 같은 행에서 예약된 좌석/ 남아있는 좌석을 구분
+// 3. 예약된 좌석이 위의 3가지 경우의 수에 해당하는지 파악하여 카운트
 
 function solution(N, S) {
   let newArr = []
@@ -46,19 +30,19 @@ function solution(N, S) {
       arr1.push(newArr[i][1])
     }
   }
-  console.log(arr1)
+  //   console.log(arr1)
 
-  if (arr1.excludes('B' && 'C' && 'D' && 'E' && 'F' && 'G' && 'H' && 'J')) {
-    casesNum += 2
-  } else if (arr1.excludes('D' && 'E' && 'F' && 'G')) {
-    casesNum += 1
-  } else if (arr1.excludes('B' && 'C' && 'D' && 'E')) {
-    casesNum += 1
-  } else if (arr1.excludes('F' && 'G' && 'H' && 'J')) {
-    casesNum += 1
-  } else {
-    casesNum
-  }
+  //   if (arr1.excludes('B' && 'C' && 'D' && 'E' && 'F' && 'G' && 'H' && 'J')) {
+  //     casesNum += 2
+  //   } else if (arr1.excludes('D' && 'E' && 'F' && 'G')) {
+  //     casesNum += 1
+  //   } else if (arr1.excludes('B' && 'C' && 'D' && 'E')) {
+  //     casesNum += 1
+  //   } else if (arr1.excludes('F' && 'G' && 'H' && 'J')) {
+  //     casesNum += 1
+  //   } else {
+  //     casesNum
+  //   }
 
   console.log(casesNum)
 }
