@@ -7,15 +7,16 @@ function solution(n) {
   while (diviser <= n) {
     if (n % diviser == 0) {
       diviserArr.push(diviser)
+      console.log(diviserArr)
     }
     ++diviser
   }
   let diviserSum = diviserArr.reduce((acc, cur) => acc + cur, 0)
-
+  console.log(diviserSum)
   return diviserSum
 }
 
-// solution(12)
+solution(30)
 
 // 다른 사람들 풀이
 function solution1(n) {
