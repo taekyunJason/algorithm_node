@@ -12,6 +12,9 @@
 function getPoketmonCategory(nums) {
   let maxPocetmon = nums.length / 2
   let sortedArr = nums.sort()
+  // console.log(sortedArr)
+  const arr = [...new Set(nums)]
+  console.log(arr.length, maxPocetmon)
   let poketmonArr = []
 
   for (i = 0; i < nums.length; i++) {
@@ -36,31 +39,31 @@ function getPoketmonCategory(nums) {
   }
 }
 
-// getPoketmonCategory([3, 3, 3, 2, 2, 2])
+getPoketmonCategory([3, 3, 3, 2, 2, 2, 1, 1, 4, 4])
 
 // 정리한 최종 코드
 
-function solution(nums) {
-  let maxPocetmon = nums.length / 2
-  let sortedArr = nums.sort()
-  let poketmonArr = []
+// function solution(nums) {
+//   let maxPocetmon = nums.length / 2
+//   let sortedArr = nums.sort()
+//   let poketmonArr = []
 
-  for (i = 0; i < nums.length; i++) {
-    if (sortedArr[i] != sortedArr[i + 1]) {
-      poketmonArr.push(sortedArr[i])
-    }
-  }
+//   for (i = 0; i < nums.length; i++) {
+//     if (sortedArr[i] != sortedArr[i + 1]) {
+//       poketmonArr.push(sortedArr[i])
+//     }
+//   }
 
-  if (maxPocetmon <= poketmonArr.length) {
-    console.log(maxPocetmon)
-    return maxPocetmon
-  } else {
-    console.log(poketmonArr.length)
-    return poketmonArr.length
-  }
-  // 3항 연산자로 축약 가능
-  //  return maxPocetmon <= poketmonArr.length ? maxPocetmon : poketmonArr.length
-}
+//   if (maxPocetmon <= poketmonArr.length) {
+//     console.log(maxPocetmon)
+//     return maxPocetmon
+//   } else {
+//     console.log(poketmonArr.length)
+//     return poketmonArr.length
+//   }
+//   // 3항 연산자로 축약 가능
+//   //  return maxPocetmon <= poketmonArr.length ? maxPocetmon : poketmonArr.length
+// }
 
 // function solution(nums) {
 //   let maxPocetmon = nums.length / 2
@@ -76,4 +79,4 @@ function solution(nums) {
 //   return maxPocetmon <= poketmonArr.length ? maxPocetmon : poketmonArr.length
 // }
 
-solution([3, 3, 3, 2, 2, 2])
+// solution([3, 3, 3, 2, 2, 2])
