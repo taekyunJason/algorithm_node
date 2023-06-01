@@ -56,3 +56,6 @@ function solution(priorities, location) {
 }
 
 console.log(solution([1, 1, 9, 1, 1, 1], 0))
+
+//shift() 메서드는 배열에서 첫 번째 요소를 제거하고, 제거된 요소를 반환합니다. 이 메서드는 배열의 길이를 변하게 합니다.
+//push() 메서드는 배열의 끝에 하나 이상의 요소를 추가하고, 배열의 새로운 길이를 반환합니다.
